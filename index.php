@@ -35,6 +35,12 @@ require_once(ROOT_PATH . '/includes/header.php');
       <?php foreach ($posts as $post) : ?>
         <div class="post" style="margin-left: 0px;">
           <img src="<?php echo BASE_URL . 'static/images/' . $post['image']; ?>" class="post_image" alt="">
+          <!-- condition to fetch and show post topic -->
+          <?php if (isset($post['topic']['name'])) : ?>
+            <a href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $post['topic']['id'] ?>" class="btn category">
+              <?php echo $post['topic']['name'] ?>
+            </a>
+          <?php endif ?>
           <a href="single_post.php?post-slug=<?php echo $post['slug']; ?>">
             <div class="post_info">
               <h3><?php echo $post['title'] ?></h3>
