@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 require_once(ROOT_PATH . '/includes/functions.php');
+require_once( ROOT_PATH . '/includes/registration_login.php');
 
 // Retrieve all posts from database
 $posts = getPublishedPosts();

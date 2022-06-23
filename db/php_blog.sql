@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 22, 2022 at 06:07 PM
+-- Generation Time: Jun 23, 2022 at 06:29 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -111,19 +111,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `role` enum('Author','Admin') DEFAULT NULL,
+  `role` enum('Member','Author','Admin') DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `role`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Mani', 'mani@codeforesight.com', 'Admin', '1234', '2022-06-21 13:57:58', '2022-06-21 13:57:58');
+(1, 'Mani', 'mani@codeforesight.com', 'Admin', '1234', '2022-06-21 13:57:58', '2022-06-21 13:57:58'),
+(2, 'usman', 'usman@codeforesight.com', NULL, 'e10adc3949ba59abbe56e057f20f883e', '2022-06-23 12:26:40', '2022-06-23 12:26:40'),
+(3, 'usman2', 'usman2@codeforesight.com', 'Author', 'e10adc3949ba59abbe56e057f20f883e', '2022-06-23 15:58:31', '2022-06-23 15:58:31');
 
 --
 -- Constraints for dumped tables
